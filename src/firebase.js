@@ -19,5 +19,3 @@ const firebaseConfig = {
   provider.addScope('user')
 
   export const auth = firebase.auth();
-
-  export default firebase;

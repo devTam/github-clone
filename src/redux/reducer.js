@@ -1,7 +1,8 @@
-const { SIGN_IN, SIGN_OUT } = require("./types")
+const { SIGN_IN, SIGN_OUT, SIGNED_IN } = require("./types")
 
 const INITIAL_STATE = {
-    token: null
+    token: null,
+    currentUser: null
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -12,10 +13,17 @@ const reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 token: action.payload
             }
+       
+        case SIGNED_IN:
+            return {
+                ...state,
+                currentUser: action.payload
+            }
         case SIGN_OUT:
             return {
                 ...state,
-                token: null
+                token: null,
+                currentUser: null
             }
 
         default:
