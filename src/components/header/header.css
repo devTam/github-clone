@@ -145,7 +145,7 @@
   
   /* MOBILE HEADER STYLES */
   
-  .header-mobile {
+  .header-mobile-main {
     display: none;
   }
   
@@ -181,10 +181,7 @@
     margin-bottom: 5px;
   }
   
-  .mobile-nav-items {
-    display: none;
-  }
-  
+ 
   .mobile-nav-items.show {
     display: block;
   }
@@ -225,3 +222,28 @@
   .mobile-nav-items .header-search {
     margin-bottom: 0;
   }
+
+  /* MEDIA QUERIES */
+
+@media only screen and (max-width: 1012px) {
+  .header-link .hide {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 788px) {
+  
+  .header-desktop {
+    display: none;
+  }
+
+  .header-mobile-main {
+    display: block;
+  }
+
+  .header-nav .header-link:nth-child(1) {
+    padding: 8px 0;
+  }
+
+} 

@@ -1,7 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { signOut } from '../../redux/actions';
 import './header.css';
+import { auth } from "../../firebase";
+import { useHistory } from 'react-router-dom';
 
-const HeaderMenu = () => {
+const HeaderMenu = ({ signOut }) => {
+
+  const history = useHistory()
+  const handleClick = () => {
+    auth.signOut()
+    signOut()
+    history.push('/');
+
+  }
   return (
     <>
       <div className="mobile-nav-items" id="mobile-nav">
@@ -44,8 +56,8 @@ const HeaderMenu = () => {
               />
               devTam
             </a>
-            <form className="sign-out-form">
-              <button className="sign-out nav-mobile header-link">
+            <div className="sign-out-form">
+              <button className="sign-out nav-mobile header-link" onClick={handleClick}>
                 <svg
                   className="octicon octicon-sign-out v-align-middle"
                   viewBox="0 0 16 16"
@@ -61,7 +73,7 @@ const HeaderMenu = () => {
                 </svg>
                 Sign out
               </button>
-            </form>
+            </div>
           </nav>
         </div>
       </div>
@@ -69,4 +81,8 @@ const HeaderMenu = () => {
   );
 };
 
-export default HeaderMenu;
+const mapDispatchToProps = dispatch => ({
+  signOut: () => dispatch(signOut())
+})
+
+export default connect(null, mapDispatchToProps)(HeaderMenu);

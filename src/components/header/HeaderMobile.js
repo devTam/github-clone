@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './header.css';
+import HeaderMenu from './HeaderMenu';
 
 const HeaderMobile = () => {
+  const [ showMenu, setShowMenu] = useState(false)
   return (
-    <>
+    <div className="header-mobile-main">
       <div className="header-mobile">
         <div className="header-item">
-          <button className="header-hamburger header-link" id="menu">
+          <button className="header-hamburger header-link" onClick={ () => setShowMenu(!showMenu) }>
             <svg
               height="24"
               className="octicon octicon-three-bars"
@@ -61,7 +63,11 @@ const HeaderMobile = () => {
           </a>
         </div>
       </div>
-    </>
+      {
+        showMenu && <HeaderMenu />
+      }
+      
+    </div>
   );
 };
 
