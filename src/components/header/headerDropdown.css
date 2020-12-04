@@ -1,0 +1,136 @@
+.header-dropdown {
+    width: 180px;
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+    z-index: 100;
+    padding-bottom: 4px;
+    margin-top: 2px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 8px 24px rgba(149,157,165,0.2);
+    color: #24292e;
+    font-family: inherit;
+}
+
+.header-dropdown::before {
+    top: -16px;
+    right: 9px;
+    left: auto;
+    border: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    position: absolute;
+    display: inline-block;
+    content: "";
+}
+
+.signin {
+    padding-bottom: 0;
+    font-size: inherit;
+}
+
+.signin a {
+    color: #24292e;
+    outline-width: 0;
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.username {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.dropdown-divider {
+    display: block;
+    margin: 8px 0;
+    height: 0;
+    border-top: 1px solid #e1e4e8;
+}
+
+.status-container {
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.25;
+    font-size: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.status-inner {
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-top: 8px;
+    border: 1px solid #e1e4e8;
+}
+
+.status-details {
+    display: flex;
+}
+
+.emoji-container {
+    display: flex;
+    line-height: 1.25;
+    font-size: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: bottom;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-svg {
+    vertical-align: text-bottom;
+    display: inline-block;
+    fill: #586069;
+}
+
+.message-wrapper {
+    line-height: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.text-gray {
+    color: #586069;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 4px 8px 4px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    background-color: initial;
+    color: inherit;
+    font-weight: normal;
+}
+
+.dropdown-item:hover {
+    text-decoration: none;
+    outline: none;
+    background-color: #0366d6;
+    color: #fff;
+}
+
+.dropdown-signout {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
