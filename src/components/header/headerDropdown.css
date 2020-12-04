@@ -134,3 +134,11 @@
     font-size: inherit;
     line-height: inherit;
 }
+
+.status-details:hover .text-gray {
+    color: #0366d6;
+}
+
+.status-details:hover .dropdown-svg {
+    fill: #0366d6;
+}

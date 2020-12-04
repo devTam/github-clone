@@ -1,12 +1,16 @@
 import React from 'react';
 import Header from '../components/header/Header';
-import './profile.styles.css';
+import Sidebar from '../components/sidebar/Sidebar';
+import './profile.css';
 
 const Profile = () => {
     
     return (
         <>
-            <Header />  
+            <Header />
+            <main className="main" >
+                <Sidebar />
+            </main>  
         </>
     )
 }

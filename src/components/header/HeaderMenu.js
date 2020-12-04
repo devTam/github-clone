@@ -52,7 +52,7 @@ const HeaderMenu = ({ signOut }) => {
                 id="profile-image-mobile"
                 width="20"
                 height="20"
-                alt="profile"
+                alt=""
               />
               devTam
             </a>
