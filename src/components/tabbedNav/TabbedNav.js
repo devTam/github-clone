@@ -5,7 +5,7 @@ const TabbedNav = ({selectedTab, setSelectedTab}) => {
     return (
         <div className="tabbed-nav">
           <nav className="underlined-nav-body">
-            <div className={`underlined-nav ${selectedTab == 'overview' ? 'selected' : ''}`} onClick={() => setSelectedTab('overview')}>
+            <div className={`underlined-nav ${selectedTab === 'overview' ? 'selected' : ''}`} onClick={() => setSelectedTab('overview')}>
               <svg
                 className="UnderlineNav-octicon hide-sm"
                 height="16"
@@ -21,7 +21,7 @@ const TabbedNav = ({selectedTab, setSelectedTab}) => {
               </svg>
               Overview
             </div>
-            <div className={`underlined-nav ${selectedTab == 'repositories' ? 'selected' : ''}`} onClick={() => setSelectedTab('repositories')}>
+            <div className={`underlined-nav ${selectedTab === 'repositories' ? 'selected' : ''}`} onClick={() => setSelectedTab('repositories')}>
               <svg
                 className="UnderlineNav-octicon hide-sm"
                 height="16"

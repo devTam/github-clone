@@ -1,0 +1,82 @@
+.overview-container {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 24px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.pinned-container {
+    margin-top: 24px;
+}
+
+.pinned-text, .contributions-text {
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-size: 16px;
+    display: flex;
+    color: #24292e;
+    justify-content: space-between;
+}
+
+.customize-btn, .contributions-btn {
+    font-size: 13px;
+    font-weight: 400;
+    color: #586069;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.customize-btn:hover, .contributions-btn:hover {
+    color: #0366d6;
+}
+
+.pinned-items {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    margin-right: -8px;
+    margin-left: -8px;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.contributions {
+    margin-top: 24px;
+}
+
+.contributions-btn i {
+    vertical-align: text-bottom;
+    margin-left: 2px;
+}
+
+.graph-container {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #e1e4e8;
+}
+
+.graph-content {
+    padding-top: 4px;
+    margin-right: 16px;
+    margin-left: 16px;
+    height: 100%;
+}
+
+.graph-img {
+    max-width: 100%;
+    display: block;
+    height: 128px;
+    object-fit: contain;
+}
+
+ @media only screen and (min-width: 788px) {
+    .overview-container {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+} 
+  
