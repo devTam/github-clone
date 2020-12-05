@@ -6,6 +6,10 @@
     margin-right: auto;
   }
 
+  .main-repo {
+    flex: 0.75;
+  }
+
 @media only screen and (max-width: 788px) {
     .main {
         padding: 16px;

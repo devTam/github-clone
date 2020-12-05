@@ -1,223 +1,281 @@
-
 /* SIDEBAR WITH PROFILE PIC STYLES */
 .main-profile {
-    flex: 0.25;
-    padding-left: 24px;
-    padding-right: 8px;
-    position: relative;
-  }
-  
-  .profile-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .profile-image {
-    display: inline-block;
+  flex: 0.25;
+  padding-left: 24px;
+  padding-right: 8px;
+  position: relative;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-image {
+  display: inline-block;
+  width: auto;
+  padding: 15px;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.profile-image > a {
+  color: #0366d6;
+  text-decoration: none;
+  position: relative;
+}
+
+.profile-image img {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px transparent;
+  vertical-align: middle;
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e1e4e8;
+  object-fit: contain;
+}
+
+.profile-name {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 192.25px;
+}
+
+.profile-name h1 {
+  line-height: 1;
+  font-weight: 600;
+}
+
+.full-name {
+  font-size: 26px;
+  line-height: 1.25;
+  display: block;
+}
+
+.username {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: #586069;
+  display: block;
+}
+
+.btn {
+  color: #24292e;
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background-color: #f3f4f6;
+  border-color: rgba(27, 31, 35, 0.15);
+  transition-duration: 0.1s;
+  text-decoration: none;
+}
+
+.set-status-container {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  z-index: 2;
+  margin-bottom: 16px;
+  left: 84%;
+  top: 310%;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 2em;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.status-mobile {
+  display: none;
+  position: static;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.status-mobile .status-text {
+  display: block;
+}
+
+@media (hover: hover) {
+  .set-status-container:hover {
     width: auto;
-    padding: 15px;
-    padding-bottom: 0;
-    padding-left: 0;
-  }
-  
-  .profile-image > a {
-    color: #0366d6;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  .profile-image img {
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px transparent;
-    vertical-align: middle;
-    background-color: #fff;
-    width: 100%;
-    height: auto;
-    border: 1px solid #e1e4e8;
-    object-fit: contain;
-  }
-  
-  .profile-name {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    width: 192.25px;
-  }
-  
-  .profile-name h1 {
-    line-height: 1;
-    font-weight: 600;
-  }
-  
-  .full-name {
-    font-size: 26px;
-    line-height: 1.25;
-    display: block;
-  }
-  
-  .username {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 24px;
-    color: #586069;
-    display: block;
   }
 
-  .btn {
-    color: #24292e;
-    background-color: #fafbfc;
-    border-color: rgba(27, 31, 35, 0.15);
-    box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
-      inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
-    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    transition-property: color, background-color, border-color;
-    display: inline-block;
-    padding: 5px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
+  .set-status-container:hover .status-text {
+    display: flex;
   }
-  
-  .btn:hover {
-    background-color: #f3f4f6;
-    border-color: rgba(27, 31, 35, 0.15);
-    transition-duration: 0.1s;
-    text-decoration: none;
-  }
-  
-  
+}
+
+.status-img {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.status-img svg {
+  vertical-align: text-bottom;
+  display: inline-block;
+  fill: #586069;
+}
+
+.link-gray {
+  color: #586069;
+}
+
+.status-text {
+  color: #586069;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 8px;
+  white-space: nowrap;
+  display: none;
+}
+
+.job-desc {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-edit {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.profile-edit button {
+  display: block;
+  font-family: inherit;
+  font-weight: 500;
+  width: 100%;
+  outline-width: 0;
+}
+
+.email-following-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.following {
+  margin-bottom: 16px;
+}
+
+.following a,
+.email a {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.link-gray svg,
+.email svg {
+  fill: #6a737d;
+  vertical-align: text-bottom;
+}
+
+.email svg {
+  margin-right: 4px;
+}
+
+.link-gray span {
+  color: #24292e;
+  font-weight: 600;
+  margin: 0 4px;
+}
+
+.dot {
+  display: inline-block;
+  margin-left: 4px;
+  transform: translateY(-2px);
+}
+
+.margin-right {
+  margin-right: 4px;
+}
+
+.email a {
+  color: #24292e;
+}
+
+@media only screen and (max-width: 900px) {
   .set-status-container {
-    width: 38px;
-    height: 38px;
-    position: absolute;
-    z-index: 2;
-    margin-bottom: 16px;
-    left: 84%;
-    top: 310%;
-    font-size: 14px;
-    background-color: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 2em;
-    box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+    left: 80%;
+    top: 200%;
   }
-  
+}
+
+@media only screen and (max-width: 788px) {
+  .set-status-container {
+    display: none;
+  }
+
   .status-mobile {
-    display: none;
-    position: static;
-    width: 100%;
-    border-radius: 6px;
-  }
-  
-  .status-mobile .status-text {
-    display: block;
-  }
-  
-  @media (hover: hover) {
-    .set-status-container:hover {
-      width: auto;
-    }
-  
-    .set-status-container:hover .status-text {
-      display: flex;
-    }
-  }
-  
-  .status-img {
-    width: 20px;
-    height: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 8px;
+    margin-bottom: 10px;
   }
-  
-  .status-img svg {
-    vertical-align: text-bottom;
-    display: inline-block;
-    fill: #586069;
-  }
-  
-  .link-gray {
-    color: #586069;
-  }
-  
-  .status-text {
-    color: #586069;
-    font-size: 12px;
-    line-height: 20px;
-    padding: 8px;
-    white-space: nowrap;
-    display: none;
-  }
-  
-  .job-desc {
-    font-size: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .profile-edit {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  .profile-edit button {
-    display: block;
-    font-family: inherit;
-    font-weight: 500;
-    width: 100%;
-  }
-  
-  .email-following-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
+
   .following {
+    margin-top: 10px;
+    order: 2;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 788px) {
+  .profile-details {
+    flex-direction: row;
+    margin: 0;
     margin-bottom: 16px;
-  }
-  
-  .following a,
-  .email a {
-    white-space: nowrap;
-    text-decoration: none;
-  }
-  
-  .link-gray svg,
-  .email svg {
-    fill: #6a737d;
-    vertical-align: text-bottom;
+    justify-content: center;
+    align-items: center;
   }
 
-  .email svg {
-      margin-right: 4px;
-  }
-  
-  .link-gray span {
-    color: #24292e;
-    font-weight: 600;
-    margin: 0 4px;
+  .profile-image {
+    flex: 0.2;
+    padding: 0;
   }
 
-  .dot {
-    display: inline-block;
-    margin-left: 4px;
-    transform: translateY(-2px);
+  .profile-name {
+    flex: 0.8;
+    margin-left: 20px;
   }
 
-  .margin-right {
-      margin-right: 4px;
+  .set-status-container {
+    display: none;
   }
-  
-  .email a {
-    color: #24292e;
+
+  .status-mobile {
+    display: flex;
+    margin-bottom: 10px;
   }
+
+  .following {
+    margin-top: 10px;
+    order: 2;
+    margin-bottom: 50px;
+  }
+}
