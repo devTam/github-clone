@@ -1,0 +1,99 @@
+.repo-list {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  
+  .repo-list-item {
+    width: 100%;
+    padding: 24px 0;
+    border-bottom: 1px solid #e1e4e8;
+    display: flex;
+  }
+  
+  .list-item-left {
+    display: inline-block;
+    flex: 1;
+  }
+  
+  .list-item-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .repoo-name {
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+  
+  .repoo-name div {
+    color: #0366d6;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .repoo-name div:hover {
+    text-decoration: underline;
+    color: #0366d6;
+  }
+  
+  .repo-description p {
+    display: inline-block;
+    padding-right: 24px;
+    margin-bottom: 8px;
+    color: #586069;
+    width: 70%;
+  }
+  
+  .repo-details {
+    color: #586069;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  
+  .primary-language {
+    margin-right: 16px;
+    margin-left: 0;
+  }
+
+  .language {
+      margin-left: 4px;
+  }
+  
+  .language-color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .forks {
+    margin-right: 16px;
+    color: #586069;
+    text-decoration: none;
+  }
+  
+  .forks svg {
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+  
+  .star-btn {
+    outline-width: 0;
+    padding: 3px 12px !important;
+    font-size: 12px !important;
+    font-family: inherit;
+    margin-right: 16px;
+  }
+  
+  .star-btn svg {
+    vertical-align: text-top !important;
+    color: #6a737d;
+    display: inline-block;
+    fill: currentColor;
+    margin-right: 4px;
+  }

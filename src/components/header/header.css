@@ -31,6 +31,8 @@
     color: white;
     white-space: nowrap;
     text-decoration: none;
+    cursor: pointer;
+    display: inline;
   }
   
   .header-link:focus,
@@ -83,7 +85,7 @@
   }
   
   .header-form > input::placeholder {
-    color: inherit;
+    /* color: #24292e; */
     font-size: 14px;
   }
   

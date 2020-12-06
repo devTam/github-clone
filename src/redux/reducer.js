@@ -1,9 +1,14 @@
-const { SIGN_IN, SIGN_OUT, SIGNED_IN } = require('./types');
+const { SIGN_IN, SIGN_OUT, SIGNED_IN, COLOR, SELECTED_TAB, FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } = require('./types');
 
 const INITIAL_STATE = {
   token: null,
   currentUser: null,
   dropdown: false,
+  languageColor: 'javascript',
+  selectedTab: 'overview',
+  loading: false,
+  data: null,
+  error: ''
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -27,6 +32,38 @@ const reducer = (state = INITIAL_STATE, action) => {
         currentUser: null,
         dropdown: false
       };
+
+    case COLOR:
+      return {
+        ...state,
+        languageColor: action.payload
+      };
+
+    case SELECTED_TAB:
+      return {
+        ...state,
+        selectedTab: action.payload
+      };
+
+    case FETCH_DATA_START:
+      return {
+        ...state,
+        loading: true
+      }
+
+    case FETCH_DATA_SUCCESS: 
+    return {
+      ...state,
+      loading:false,
+      data: action.payload
+    }
+
+    case FETCH_DATA_FAILURE:
+      return {
+        ...state,
+        loading:false,
+        error: action.payload
+      }
 
     default:
       return state;

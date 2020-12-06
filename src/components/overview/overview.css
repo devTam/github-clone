@@ -67,10 +67,10 @@
 }
 
 .graph-img {
+    width: 100%;
     max-width: 100%;
     display: block;
-    height: 128px;
-    object-fit: contain;
+    height: auto;
 }
 
  @media only screen and (min-width: 788px) {

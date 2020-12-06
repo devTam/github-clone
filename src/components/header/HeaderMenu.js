@@ -31,31 +31,35 @@ const HeaderMenu = ({ signOut }) => {
             />
           </form>
           <nav className="header-nav mobile-nav">
-            <a href="/" className="nav-mobile header-link">
+            <div className="nav-mobile header-link">
               Dashboard
-            </a>
-            <a href="/" className="nav-mobile header-link">
+            </div>
+            <div className="nav-mobile header-link">
               Pull requests
-            </a>
-            <a href="/" className="nav-mobile header-link">
+            </div>
+            <div className="nav-mobile header-link">
               Issues
-            </a>
-            <a href="/" className="nav-mobile header-link">
+            </div>
+            <div className="nav-mobile header-link">
               Marketplace
-            </a>
-            <a href="/" className="nav-mobile header-link">
+            </div>
+            <div className="nav-mobile header-link">
               Explore
-            </a>
-            <a href="/" className="nav-mobile header-link nav-mobile-profile">
+            </div>
+            <div className="nav-mobile header-link">
+              Settings
+            </div>
+            <div className="nav-mobile header-link nav-mobile-profile">
               {/* <!-- FETCH IMAGE FROM API --> */}
               <img
+               src="https://avatars0.githubusercontent.com/u/56544801?s=460&u=09ea785d2f540bff7f342ea533be4459c18aa12f&v=4"
                 id="profile-image-mobile"
                 width="20"
                 height="20"
                 alt=""
               />
               devTam
-            </a>
+            </div>
             <div className="sign-out-form">
               <button className="sign-out nav-mobile header-link" onClick={handleClick}>
                 <svg

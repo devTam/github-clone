@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { setSelectedTab } from '../../redux/actions';
 import './tabbedNav.css';
 
 const TabbedNav = ({selectedTab, setSelectedTab}) => {
@@ -37,7 +39,7 @@ const TabbedNav = ({selectedTab, setSelectedTab}) => {
               </svg>
               Repositories
               {/* <!-- FROM API --> */}
-              <span id="repo-count" className="counter"></span>
+              <span id="repo-count" className="counter">59</span>
             </div>
             <div className="underlined-nav">
               <svg
@@ -76,4 +78,12 @@ const TabbedNav = ({selectedTab, setSelectedTab}) => {
     )
 }
 
-export default TabbedNav
+const mapStateToProps = ({selectedTab}) => ({
+  selectedTab
+})
+
+const mapDispatchToProps = dispatch => ({
+  setSelectedTab: (tab) => dispatch(setSelectedTab(tab))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TabbedNav)

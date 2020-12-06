@@ -45,6 +45,10 @@
   cursor: pointer;
 }
 
+.repo-name:hover {
+  text-decoration: underline;
+}
+
 .drag {
   color: #586069;
   padding-left: 8px;
@@ -88,7 +92,7 @@
 }
 
 .language-name {
-    margin-left: 2px;
+    margin-left: 4px;
 }
 
 .javascript {

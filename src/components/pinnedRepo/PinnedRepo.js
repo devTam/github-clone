@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './pinnedRepo.css';
 
-const PinnedRepo = () => {
+const PinnedRepo = ({ color }) => {
   return (
     <li className="pinned-repo">
       <div className="item-container">
@@ -50,7 +51,7 @@ const PinnedRepo = () => {
 
           <p className="language-container">
             <span className="language">
-                <span className="language-color javascript"></span>
+                <span className={`language-color ${color === 'javascript' ? 'javascript': color === 'css' ? 'css' : color === 'html' ? 'html' : 'typescript'}`} ></span>
                 <span className="language-name">JavaScript</span>
             </span>
           </p>
@@ -60,4 +61,8 @@ const PinnedRepo = () => {
   );
 };
 
-export default PinnedRepo;
+const mapStateToProps = state => ({
+  color: state.languageColor
+})
+
+export default connect(mapStateToProps)(PinnedRepo);
