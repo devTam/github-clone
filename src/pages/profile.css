@@ -8,7 +8,7 @@
 
 .main-repo {
   flex: 0.75;
-  z-index: -1;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 788px) {
@@ -19,7 +19,4 @@
     flex-direction: column;
   }
 
-  .main-repo {
-    z-index: 1;
-  }
 }

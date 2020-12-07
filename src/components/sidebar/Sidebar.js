@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import './sidebar.css';
 
@@ -13,8 +13,24 @@ const Sidebar = (props) => {
     starredCount,
     email,
   } = props;
+
+  const sidebarRef = useRef();
+
+  const handleScroll = () => {
+    if (window.pageYOffset >= 400) {
+      sidebarRef && sidebarRef.current.classList.add('under');
+    } else {
+      sidebarRef.current.classList.remove('under');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  },[])
+
   return (
-    <section className="main-profile">
+    <section className="main-profile" ref={sidebarRef}>
       <div className="profile-details">
         <div className="profile-image">
           {/* <!-- FROM API --> */}

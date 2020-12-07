@@ -9,8 +9,9 @@ import { connect } from 'react-redux';
 import Footer from '../components/footer/Footer';
 import fetchDataAsync from '../redux/actions';
 import MobileTabbed from '../components/mobileTabbed/MobileTabbed';
+import Loader from '../components/loader/Loader';
 
-const Profile = ({selectedTab, fetchData}) => {
+const Profile = ({selectedTab, fetchData, loading}) => {
 
   useEffect(() => {
     fetchData()
@@ -18,6 +19,11 @@ const Profile = ({selectedTab, fetchData}) => {
 
   return (
     <>
+      {
+        loading && 
+      <Loader />
+      }
+    
       <Header />
           <TabbedNav/>
       <main className="main">
@@ -32,8 +38,9 @@ const Profile = ({selectedTab, fetchData}) => {
   );
 };
 
-const mapStateToProps = ({selectedTab}) => ({
+const mapStateToProps = ({selectedTab, loading}) => ({
   selectedTab,
+  loading
   
 })
 

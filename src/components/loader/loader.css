@@ -1,0 +1,23 @@
+.loader {
+    background-color: #24292E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.loader svg {
+    fill: white;
+    animation: scale 1s infinite alternate
+}
+
+@keyframes scale {
+    to {
+        transform: scale(1.5)
+    }
+}

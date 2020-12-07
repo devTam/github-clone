@@ -9,11 +9,8 @@
   padding: 0 8px;
   overflow-x: auto;
   border-bottom: 1px solid #e1e4e8;
-  
-}
-
-.tabbed-nav.stuck {
   z-index: 2;
+  
 }
 
 .underlined-nav-body {

@@ -4,8 +4,12 @@
   padding-left: 24px;
   padding-right: 8px;
   position: relative;
-  z-index: 1;
   top: -42px;
+  z-index: 3;
+}
+
+.main-profile.under {
+  z-index: 1;
 }
 
 .profile-details {
