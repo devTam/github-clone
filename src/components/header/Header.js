@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './header.css';
 import HeaderDropdown from './HeaderDropdown';
 import HeaderMobile from './HeaderMobile';
 
-const Header = () => {
-  const [dropdown, setDropdown] = useState(false)
-
+const Header = ({ avatarUrl }) => {
+  const [dropdown, setDropdown] = useState(false);
   return (
     <header className="header">
       <div className="header-desktop">
@@ -43,15 +43,9 @@ const Header = () => {
               <div className="header-link">
                 Pull <span className="hide">requests</span>
               </div>
-              <div className="header-link">
-                Issues
-              </div>
-              <div className="header-link">
-                Marketplace
-              </div>
-              <div className="header-link">
-                Explore
-              </div>
+              <div className="header-link">Issues</div>
+              <div className="header-link">Marketplace</div>
+              <div className="header-link">Explore</div>
             </nav>
           </div>
         </div>
@@ -95,7 +89,7 @@ const Header = () => {
               alt=""
               width="20"
               height="20"
-              src="https://avatars0.githubusercontent.com/u/56544801?s=460&u=09ea785d2f540bff7f342ea533be4459c18aa12f&v=4"
+              src={avatarUrl}
               className="avatar avatar-user"
             />
             <span className="dropdown-caret">
@@ -111,5 +105,8 @@ const Header = () => {
   );
 };
 
+const mapStateToProps = ({ data }) => ({
+  avatarUrl: data ? data.avatarUrl: ''
+});
 
-export default Header;
+export default connect(mapStateToProps)(Header);

@@ -5,7 +5,7 @@ import './header.css';
 import { auth } from "../../firebase";
 import { useHistory } from 'react-router-dom';
 
-const HeaderMenu = ({ signOut }) => {
+const HeaderMenu = ({ signOut, avatarUrl }) => {
 
   const history = useHistory()
   const handleClick = () => {
@@ -52,7 +52,7 @@ const HeaderMenu = ({ signOut }) => {
             <div className="nav-mobile header-link nav-mobile-profile">
               {/* <!-- FETCH IMAGE FROM API --> */}
               <img
-               src="https://avatars0.githubusercontent.com/u/56544801?s=460&u=09ea785d2f540bff7f342ea533be4459c18aa12f&v=4"
+               src={avatarUrl}
                 id="profile-image-mobile"
                 width="20"
                 height="20"
@@ -85,8 +85,13 @@ const HeaderMenu = ({ signOut }) => {
   );
 };
 
+const mapStateToProps = ({ data }) => ({
+  avatarUrl: data ? data.avatarUrl: ''
+});
+
+
 const mapDispatchToProps = dispatch => ({
   signOut: () => dispatch(signOut())
 })
 
-export default connect(null, mapDispatchToProps)(HeaderMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenu);

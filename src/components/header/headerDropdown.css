@@ -32,7 +32,7 @@
     font-size: inherit;
 }
 
-.signin a {
+.signin div {
     color: #24292e;
     outline-width: 0;
     display: block;
@@ -41,7 +41,7 @@
     font-weight: 400;
 }
 
-.username {
+.username-header {
     max-width: 100%;
     display: inline-block;
     vertical-align: top;

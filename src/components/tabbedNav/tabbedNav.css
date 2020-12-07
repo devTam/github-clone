@@ -1,6 +1,7 @@
 .tabbed-nav {
   position: sticky;
   top: 0;
+  margin-top: 24px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -8,17 +9,55 @@
   padding: 0 8px;
   overflow-x: auto;
   border-bottom: 1px solid #e1e4e8;
+  
+}
+
+.tabbed-nav.stuck {
+  z-index: 2;
 }
 
 .underlined-nav-body {
   display: flex;
+  width: 100%;
+}
+
+.tabbed-profile-image {
+  padding: 8px 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  width: 29%;
+  transition: .4s ease;
+  opacity: 0;
+}
+
+.tabbed-profile-image.stuck{
+  opacity: 1
+}
+
+.avatar-user-fixed {
+  margin-left: 50px;
+  border-radius: 50%;
+}
+
+.avatar-username {
+  display: table-cell;
+  line-height: 1.25;
+  vertical-align: middle;
+  transition: 0.2s ease;
+  margin-left: 8px;
+  color: #24292e;
+}
+
+.avatar-username strong {
+  font-weight: 600;
 }
 
 .underlined-nav {
   padding: 8px 16px;
   font-size: 14px;
+  color: #24292e;
   line-height: 30px;
-  color: var(--color-text-primary);
   text-align: center;
   white-space: nowrap;
   background-color: initial;
@@ -32,7 +71,7 @@
 .underlined-nav.selected,
 .underlined-nav.selected:hover {
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: #24292e;
   border-bottom-color: #f9826c;
   outline: 1px dotted transparent;
   outline-offset: -1px;
@@ -44,7 +83,7 @@
 
 .underlined-nav:focus,
 .underlined-nav:hover {
-  color: var(--color-text-primary);
+  color: #24292e;
   text-decoration: none;
   border-bottom-color: #d1d5da;
   outline: 1px dotted transparent;
@@ -52,7 +91,7 @@
 
 .underlined-nav .counter {
   margin-left: 4px;
-  color: var(--color-text-primary);
+  color: #24292e;
   display: inline-block;
   min-width: 20px;
   padding: 0 6px;
@@ -66,15 +105,26 @@
 }
 
 .underlined-nav > svg {
-  margin-right: 4px;
+  margin-right: 8px;
   fill: #959da5;
   vertical-align: text-bottom;
   display: inline-block;
 }
 
+@media (max-width: 1300px) {
+  .avatar-user-fixed {
+    margin-left: 16px;
+  }
+}
+
 @media only screen and (max-width: 788px) {
   .tabbed-nav {
     padding: 0;
+    display: none;
+  }
+  
+  .tabbed-profile-image {
+    display: none;
   }
 }
 

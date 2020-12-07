@@ -1,49 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { setSelectedTab } from '../../redux/actions';
-import './tabbedNav.css';
+import './mobileTabbed.css';
 
-const TabbedNav = ({
+const MobileTabbed = ({
   selectedTab,
   setSelectedTab,
   repoCount,
-  avatarUrl,
-  username,
 }) => {
-  const navRef = useRef();
-  const hiddenRef = useRef();
-  const handleScroll = () => {
-    if (window.pageYOffset >= 400) {
-      navRef && navRef.current.classList.add('stuck');
-      hiddenRef && hiddenRef.current.classList.add('stuck');
-    } else {
-      navRef.current.classList.remove('stuck');
-      hiddenRef.current.classList.remove('stuck');
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  
   return (
-    <div className="tabbed-nav" ref={navRef}>
-      <nav className="underlined-nav-body">
-        <div className="tabbed-profile-image" ref={hiddenRef}>
-          <img
-            className="avatar-user-fixed"
-            height="32"
-            width="32"
-            alt=""
-            src={avatarUrl}
-          />
-          <span className="avatar-username">
-            <strong>{username}</strong>
-          </span>
-        </div>
+    <div className="mobile-tabbed-nav">
+      <nav className="mobile-underlined-nav-body">
+        
         <div
-          className={`underlined-nav ${
+          className={`mobile-underlined-nav ${
             selectedTab === 'overview' ? 'selected' : ''
           }`}
           onClick={() => setSelectedTab('overview')}
@@ -64,7 +35,7 @@ const TabbedNav = ({
           Overview
         </div>
         <div
-          className={`underlined-nav ${
+          className={`mobile-underlined-nav ${
             selectedTab === 'repositories' ? 'selected' : ''
           }`}
           onClick={() => setSelectedTab('repositories')}
@@ -88,7 +59,7 @@ const TabbedNav = ({
             {repoCount}
           </span>
         </div>
-        <div className="underlined-nav">
+        <div className="mobile-underlined-nav">
           <svg
             className="UnderlineNav-octicon hide-sm"
             height="16"
@@ -104,7 +75,7 @@ const TabbedNav = ({
           </svg>
           Projects
         </div>
-        <div className="underlined-nav">
+        <div className="mobile-underlined-nav">
           <svg
             className="UnderlineNav-octicon hide-sm"
             height="16"
@@ -128,12 +99,10 @@ const TabbedNav = ({
 const mapStateToProps = ({ selectedTab, data }) => ({
   selectedTab,
   repoCount: data ? data.repositories.totalCount : '',
-  avatarUrl: data ? data.avatarUrl: '',
-  username: data? data.login: '',
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setSelectedTab: (tab) => dispatch(setSelectedTab(tab)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TabbedNav);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileTabbed);

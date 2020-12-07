@@ -1,10 +1,17 @@
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
 const { SIGN_IN, SIGN_OUT, SIGNED_IN, COLOR, SELECTED_TAB, FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } = require('./types');
 
 const INITIAL_STATE = {
   token: null,
   currentUser: null,
   dropdown: false,
-  languageColor: 'javascript',
   selectedTab: 'overview',
   loading: false,
   data: null,
@@ -70,4 +77,4 @@ const reducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default reducer;
+export default persistReducer(persistConfig, reducer);

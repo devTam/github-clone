@@ -4,6 +4,8 @@
   padding-left: 24px;
   padding-right: 8px;
   position: relative;
+  z-index: 1;
+  top: -42px;
 }
 
 .profile-details {
@@ -17,11 +19,6 @@
   padding: 15px;
   padding-bottom: 0;
   padding-left: 0;
-}
-
-.profile-image > a {
-  color: #0366d6;
-  text-decoration: none;
   position: relative;
 }
 
@@ -98,7 +95,7 @@
   z-index: 2;
   margin-bottom: 16px;
   left: 84%;
-  top: 310%;
+  top: 74%;
   font-size: 14px;
   background-color: #fff;
   border: 1px solid #e1e4e8;
@@ -185,10 +182,11 @@
   margin-bottom: 16px;
 }
 
-.following a,
-.email a {
+.following div,
+.email div {
   white-space: nowrap;
   text-decoration: none;
+  display: inline-block;
 }
 
 .link-gray svg,
@@ -217,35 +215,24 @@
   margin-right: 4px;
 }
 
-.email a {
+.email div {
   color: #24292e;
 }
 
 @media only screen and (max-width: 900px) {
   .set-status-container {
     left: 80%;
-    top: 200%;
+    top: 74%;
   }
 }
 
-@media only screen and (max-width: 788px) {
-  .set-status-container {
-    display: none;
-  }
-
-  .status-mobile {
-    display: flex;
-    margin-bottom: 10px;
-  }
-
-  .following {
-    margin-top: 10px;
-    order: 2;
-    margin-bottom: 50px;
-  }
-}
 
 @media only screen and (max-width: 788px) {
+  .main-profile {
+    top: 0;
+    padding: 0;
+  }
+
   .profile-details {
     flex-direction: row;
     margin: 0;
@@ -278,4 +265,10 @@
     order: 2;
     margin-bottom: 50px;
   }
+
+ 
+
+ 
+
+
 }

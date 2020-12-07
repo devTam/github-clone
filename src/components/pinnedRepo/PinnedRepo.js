@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './pinnedRepo.css';
 
-const PinnedRepo = ({ color }) => {
+const PinnedRepo = ({ name, description, primaryLanguage }) => {
   return (
     <li className="pinned-repo">
       <div className="item-container">
@@ -24,7 +23,7 @@ const PinnedRepo = ({ color }) => {
 
             <div className="repo-name">
               <span className="repo" title="saintly-hng">
-                saintly-hng
+                {name}
               </span>
             </div>
 
@@ -46,13 +45,13 @@ const PinnedRepo = ({ color }) => {
           </div>
 
           <p className="repo-desc">
-              A get notified app landing page using PHP for rmail capture and MySQL as a database
+              {description}
           </p>
 
           <p className="language-container">
             <span className="language">
-                <span className={`language-color ${color === 'javascript' ? 'javascript': color === 'css' ? 'css' : color === 'html' ? 'html' : 'typescript'}`} ></span>
-                <span className="language-name">JavaScript</span>
+                <span className={`language-color ${primaryLanguage === 'JavaScript' ? 'javascript': primaryLanguage === 'CSS' ? 'css' : primaryLanguage === 'HTML' ? 'html' : 'typescript'}`} ></span>
+  <span className="language-name">{primaryLanguage}</span>
             </span>
           </p>
         </div>
@@ -61,8 +60,5 @@ const PinnedRepo = ({ color }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  color: state.languageColor
-})
 
-export default connect(mapStateToProps)(PinnedRepo);
+export default PinnedRepo;

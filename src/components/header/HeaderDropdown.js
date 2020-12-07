@@ -5,7 +5,7 @@ import { auth } from '../../firebase';
 import { signOut } from '../../redux/actions';
 import './headerDropdown.css';
 
-const HeaderDropdown = ({ signOut }) => {
+const HeaderDropdown = ({ signOut, username }) => {
     const history = useHistory()
     const handleClick = () => {
         auth.signOut();
@@ -15,9 +15,9 @@ const HeaderDropdown = ({ signOut }) => {
   return (
     <div className="header-dropdown">
       <div className="signin">
-        <a className="username-container" href="/devTam">
-          Signed in as <strong className="username">devTam</strong>
-        </a>
+        <div className="username-container">
+  Signed in as <strong className="username-header">{username}</strong>
+        </div>
       </div>
       <div className="dropdown-divider"></div>
 
@@ -46,46 +46,46 @@ const HeaderDropdown = ({ signOut }) => {
         </div>
       </div>
       <div className="dropdown-divider"></div>
-      <a className="dropdown-item" href="/devTam">
+      <div className="dropdown-item">
         Your profile
-      </a>
-      <a className="dropdown-item" href="/devTam?tab=repositories">
+      </div>
+      <div className="dropdown-item">
         Your repositories
-      </a>
-      <a className="dropdown-item" href="/settings/organizations">
+      </div>
+      <div className="dropdown-item">
         Your organizations
-      </a>
-      <a className="dropdown-item" href="/devTam?tab=projects">
+      </div>
+      <div className="dropdown-item">
         Your projects
-      </a>
-      <a className="dropdown-item" href="/devTam?tab=stars">
+      </div>
+      <div className="dropdown-item">
         Your stars
-      </a>
-      <a className="dropdown-item" href="https://gist.github.com/mine">
+      </div>
+      <div className="dropdown-item">
         Your gists
-      </a>
+      </div>
       <div className="dropdown-divider"></div>
 
-      <a className="dropdown-item" href="/settings/billing">
+      <div className="dropdown-item">
         Upgrade
-      </a>
+      </div>
 
       <div className="hide-sm hide-md feature-preview-details position-relative">
-        <a href="/" className="dropdown-item btn-link">
+        <div className="dropdown-item btn-link">
           Feature preview
-        </a>
+        </div>
         <span
           className="feature-preview-indicator js-feature-preview-indicator"
           hidden=""
         ></span>
       </div>
 
-      <a className="dropdown-item" href="https://docs.github.com">
+      <div className="dropdown-item">
         Help
-      </a>
-      <a className="dropdown-item" href="/settings/profile">
+      </div>
+      <div className="dropdown-item">
         Settings
-      </a>
+      </div>
 
       <button onClick={ handleClick } className="dropdown-item dropdown-signout">
         Sign out
@@ -93,9 +93,12 @@ const HeaderDropdown = ({ signOut }) => {
     </div>
   );
 };
+const mapStateToProps = ({data}) => ({
+  username: data ? data.login : ''
+})
 
 const mapDispatchToProps = dispatch => ({
     signOut: () => dispatch(signOut())
 })
 
-export default connect(null, mapDispatchToProps)(HeaderDropdown);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderDropdown);

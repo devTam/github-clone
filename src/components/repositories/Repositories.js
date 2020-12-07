@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Repo from '../repo/Repo';
 import './repositories.css';
 
-const Repositories = () => {
+const Repositories = ({ repos }) => {
   return (
     <div className="main-content">
       <div className="repo-search">
@@ -51,16 +52,26 @@ const Repositories = () => {
 
       <div id="user-repo-list">
         <ul className="repo-list">
-          <Repo />
-          <Repo />
-          <Repo />
-          <Repo />
-          <Repo />
-
+          {repos &&
+            repos.map((repo) => (
+              <Repo
+                key={repo.name}
+                name={repo.name}
+                starCount={repo.stargazerCount}
+                description={repo.description}
+                updated={repo.updatedAt}
+                forkCount={repo.forkCount}
+                language={repo.primaryLanguage.name}
+              />
+            ))}
         </ul>
       </div>
     </div>
   );
 };
 
-export default Repositories;
+const mapStateToProps = ({ data }) => ({
+  repos: data && data.repositories.nodes,
+});
+
+export default connect(mapStateToProps)(Repositories);

@@ -1,21 +1,25 @@
 .main {
-    display: flex;
-    margin-top: 24px;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.main-repo {
+  flex: 0.75;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 788px) {
+  .main {
+    padding: 16px;
+    padding-top: 0;
+    margin-top: 0;
+    flex-direction: column;
   }
 
   .main-repo {
-    flex: 0.75;
+    z-index: 1;
   }
-
-@media only screen and (max-width: 788px) {
-    .main {
-        padding: 16px;
-        padding-top: 0;
-        margin-top: 0;
-        flex-direction: column;
-    }
 }
-  

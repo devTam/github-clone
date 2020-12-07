@@ -83,7 +83,6 @@ const fetchDataAsync = () => {
       url: 'https://api.github.com/graphql',
       data: raw
     }).then(results => {
-      console.log(results)
       const response = results.data.data.viewer;
       dispatch(fetchSuccess(response))
     }).catch(error => {

@@ -8,6 +8,7 @@ import './profile.css';
 import { connect } from 'react-redux';
 import Footer from '../components/footer/Footer';
 import fetchDataAsync from '../redux/actions';
+import MobileTabbed from '../components/mobileTabbed/MobileTabbed';
 
 const Profile = ({selectedTab, fetchData}) => {
 
@@ -18,11 +19,11 @@ const Profile = ({selectedTab, fetchData}) => {
   return (
     <>
       <Header />
+          <TabbedNav/>
       <main className="main">
         <Sidebar />
         <div className="main-repo">
-          <TabbedNav
-          />
+        <MobileTabbed/>
           {selectedTab === 'overview' ? <Overview /> : <Repositories />}
         </div>
       </main>

@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PinnedRepo from '../pinnedRepo/PinnedRepo';
 import './overview.css';
 
-const Overview = () => {
+const Overview = ({contributions, pinnedItems}) => {
   return (
     <div className="overview-container">
       <div className="pinned-container">
@@ -12,19 +13,19 @@ const Overview = () => {
         </h2>
 
         <ol className="pinned-items">
-            <PinnedRepo />
-            <PinnedRepo />
-            <PinnedRepo />
-            <PinnedRepo />
-            <PinnedRepo />
+          {
+            pinnedItems && pinnedItems.map(item => (
+              <PinnedRepo key={item.id} name={item.name} description={item.description} primaryLanguage={item.primaryLanguage.name} /> 
+            ))
+          }
+            
         </ol>
       </div>
 
       <div className="contributions">
           <h2 className="contributions-text">
-              <span>642 contributions in the last year</span>
-              <span className="contributions-btn">
-                  contributions settings
+              <span>{contributions} contributions in the last year</span>
+              <span className="contributions-btn">contributions settings
                   <i className="fas fa-caret-down"></i>
               </span>
           </h2>
@@ -38,4 +39,10 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+const mapStateToProps = ({data}) => ({
+  contributions: data && data.contributionsCollection.contributionCalendar.totalContributions,
+  pinnedItems: data && data.pinnedItems.nodes
+
+})
+
+export default connect(mapStateToProps)(Overview);
