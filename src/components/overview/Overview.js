@@ -42,7 +42,7 @@ const Overview = ({contributions, pinnedItems, username}) => {
 const mapStateToProps = ({data}) => ({
   contributions: data && data.contributionsCollection.contributionCalendar.totalContributions,
   pinnedItems: data && data.pinnedItems.nodes,
-  username: data.login
+  username: data && data.login
 
 })
 
