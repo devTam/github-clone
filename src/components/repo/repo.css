@@ -97,3 +97,9 @@
     fill: currentColor;
     margin-right: 4px;
   }
+
+  @media (max-width: 788px) {
+    .star-btn {
+      margin-right: 0;
+    }
+  }

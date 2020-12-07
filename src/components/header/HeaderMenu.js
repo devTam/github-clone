@@ -5,7 +5,7 @@ import './header.css';
 import { auth } from "../../firebase";
 import { useHistory } from 'react-router-dom';
 
-const HeaderMenu = ({ signOut, avatarUrl }) => {
+const HeaderMenu = ({ signOut, avatarUrl, username }) => {
 
   const history = useHistory()
   const handleClick = () => {
@@ -58,7 +58,7 @@ const HeaderMenu = ({ signOut, avatarUrl }) => {
                 height="20"
                 alt=""
               />
-              devTam
+              {username}
             </div>
             <div className="sign-out-form">
               <button className="sign-out nav-mobile header-link" onClick={handleClick}>
@@ -86,7 +86,8 @@ const HeaderMenu = ({ signOut, avatarUrl }) => {
 };
 
 const mapStateToProps = ({ data }) => ({
-  avatarUrl: data ? data.avatarUrl: ''
+  avatarUrl: data && data.avatarUrl,
+  username: data && data.login
 });
 
 

@@ -91,7 +91,7 @@
   }
   
   @media only screen and (max-width: 544px) {
-    .underlined-nav > svg {
+    .mobile-underlined-nav > svg {
       display: none;
     }
   }
