@@ -6,17 +6,17 @@ import { signOut } from '../../redux/actions';
 import './headerDropdown.css';
 
 const HeaderDropdown = ({ signOut, username }) => {
-    const history = useHistory()
-    const handleClick = () => {
-        auth.signOut();
-        signOut();
-        history.push('/');
-    }
+  const history = useHistory();
+  const handleClick = () => {
+    auth.signOut();
+    signOut();
+    history.push('/');
+  };
   return (
     <div className="header-dropdown">
       <div className="signin">
         <div className="username-container">
-  Signed in as <strong className="username-header">{username}</strong>
+          Signed in as <strong className="username-header">{username}</strong>
         </div>
       </div>
       <div className="dropdown-divider"></div>
@@ -46,59 +46,39 @@ const HeaderDropdown = ({ signOut, username }) => {
         </div>
       </div>
       <div className="dropdown-divider"></div>
-      <div className="dropdown-item">
-        Your profile
-      </div>
-      <div className="dropdown-item">
-        Your repositories
-      </div>
-      <div className="dropdown-item">
-        Your organizations
-      </div>
-      <div className="dropdown-item">
-        Your projects
-      </div>
-      <div className="dropdown-item">
-        Your stars
-      </div>
-      <div className="dropdown-item">
-        Your gists
-      </div>
+      <div className="dropdown-item">Your profile</div>
+      <div className="dropdown-item">Your repositories</div>
+      <div className="dropdown-item">Your organizations</div>
+      <div className="dropdown-item">Your projects</div>
+      <div className="dropdown-item">Your stars</div>
+      <div className="dropdown-item">Your gists</div>
       <div className="dropdown-divider"></div>
 
-      <div className="dropdown-item">
-        Upgrade
-      </div>
+      <div className="dropdown-item">Upgrade</div>
 
       <div className="hide-sm hide-md feature-preview-details position-relative">
-        <div className="dropdown-item btn-link">
-          Feature preview
-        </div>
+        <div className="dropdown-item btn-link">Feature preview</div>
         <span
           className="feature-preview-indicator js-feature-preview-indicator"
           hidden=""
         ></span>
       </div>
 
-      <div className="dropdown-item">
-        Help
-      </div>
-      <div className="dropdown-item">
-        Settings
-      </div>
+      <div className="dropdown-item">Help</div>
+      <div className="dropdown-item">Settings</div>
 
-      <button onClick={ handleClick } className="dropdown-item dropdown-signout">
+      <button onClick={handleClick} className="dropdown-item dropdown-signout">
         Sign out
       </button>
     </div>
   );
 };
-const mapStateToProps = ({data}) => ({
-  username: data ? data.login : ''
-})
+const mapStateToProps = ({ data }) => ({
+  username: data ? data.login : '',
+});
 
-const mapDispatchToProps = dispatch => ({
-    signOut: () => dispatch(signOut())
-})
+const mapDispatchToProps = (dispatch) => ({
+  signOut: () => dispatch(signOut()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderDropdown);

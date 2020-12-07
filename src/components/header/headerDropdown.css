@@ -39,6 +39,9 @@
     padding: 8px 16px;
     text-decoration: none;
     font-weight: 400;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 0;
 }
 
 .username-header {
@@ -47,6 +50,7 @@
     vertical-align: top;
     white-space: nowrap;
     font-weight: 600;
+    padding-left: 4px;
 }
 
 .dropdown-divider {
