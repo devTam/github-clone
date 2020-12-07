@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PinnedRepo from '../pinnedRepo/PinnedRepo';
 import './overview.css';
 
-const Overview = ({contributions, pinnedItems}) => {
+const Overview = ({contributions, pinnedItems, username}) => {
   return (
     <div className="overview-container">
       <div className="pinned-container">
@@ -31,7 +31,7 @@ const Overview = ({contributions, pinnedItems}) => {
           </h2>
           <div className="graph-container">
               <div className="graph-content">
-              <img className='graph-img' src="https://ghchart.rshah.org/40c463/devTam" alt="my github chart" />
+              <img className='graph-img' src={`https://ghchart.rshah.org/40c463/${username}`} alt="my github chart" />
               </div>
           </div>
       </div>
@@ -41,7 +41,8 @@ const Overview = ({contributions, pinnedItems}) => {
 
 const mapStateToProps = ({data}) => ({
   contributions: data && data.contributionsCollection.contributionCalendar.totalContributions,
-  pinnedItems: data && data.pinnedItems.nodes
+  pinnedItems: data && data.pinnedItems.nodes,
+  username: data.login
 
 })
 

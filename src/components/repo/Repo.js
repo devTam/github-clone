@@ -42,7 +42,7 @@ const Repo = (props) => {
 
           {
             starCount !== 0 ? 
-          <span className="forks stars">
+          (<span className="forks stars">
             <svg
               aria-label="star"
               viewBox="0 0 16 16"
@@ -57,12 +57,12 @@ const Repo = (props) => {
               ></path>
             </svg>
             {starCount}
-          </span>
+          </span>)
           : ''
           }
           {
             forkCount !== 0 ?
-          <span className="forks">
+          (<span className="forks">
             <svg
               aria-label="fork"
               className="octicon-repo-forked"
@@ -78,7 +78,7 @@ const Repo = (props) => {
               ></path>
             </svg>
             {forkCount}
-          </span>
+          </span>)
           : ''
           }
 

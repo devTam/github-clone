@@ -56,13 +56,19 @@ const Sidebar = (props) => {
         <div className="profile-name">
           <h1>
             {/* <!-- FROM API --> */}
-            <span id="profile-name" className="full-name">
+            {
+              name &&
+            (<span id="profile-name" className="full-name">
               {name}
-            </span>
+            </span>)
+            }
             {/* <!-- FROM API --> */}
-            <span id="profile-username" className="username">
+            {
+              username &&
+            (<span id="profile-username" className="username">
               {username}
-            </span>
+            </span>)
+            }
           </h1>
         </div>
       </div>
@@ -88,7 +94,10 @@ const Sidebar = (props) => {
       </div>
 
       {/* <!-- FROM API --> */}
-      <p className="job-desc">{title}</p>
+      {
+        title && 
+      (<p className="job-desc">{title}</p>)
+      }
 
       <div className="profile-edit">
         <button className="btn">Edit profile</button>
@@ -140,6 +149,8 @@ const Sidebar = (props) => {
           </div>
         </div>
 
+        {
+          email &&
         <div className="email">
           <svg
             className="octicon"
@@ -157,6 +168,7 @@ const Sidebar = (props) => {
           {/* <!-- EMAIL FROM API --> */}
           <div id="profile-email">{email}</div>
         </div>
+        }
       </div>
     </section>
   );
