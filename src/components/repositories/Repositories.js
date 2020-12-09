@@ -61,7 +61,7 @@ const Repositories = ({ repos }) => {
                 description={repo.description}
                 updated={repo.updatedAt}
                 forkCount={repo.forkCount}
-                language={repo.primaryLanguage.name}
+                language={repo.primaryLanguage && repo.primaryLanguage.name}
               />
             ))}
         </ul>

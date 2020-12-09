@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './sidebar.css';
 
@@ -14,13 +14,13 @@ const Sidebar = (props) => {
     email,
   } = props;
 
-  const sidebarRef = useRef();
+  const [scrolled, setScrolled] = useState(false)
 
   const handleScroll = () => {
     if (window.pageYOffset >= 400) {
-      sidebarRef && sidebarRef.current.classList.add('under');
+      setScrolled(true)
     } else {
-      sidebarRef.current.classList.remove('under');
+      setScrolled(false)
     }
   };
 
@@ -30,7 +30,7 @@ const Sidebar = (props) => {
   },[])
 
   return (
-    <section className="main-profile" ref={sidebarRef}>
+    <section className={`main-profile ${scrolled && "under"}`}>
       <div className="profile-details">
         <div className="profile-image">
           {/* <!-- FROM API --> */}

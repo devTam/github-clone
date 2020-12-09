@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { setSelectedTab } from '../../redux/actions';
 import './tabbedNav.css';
@@ -10,15 +10,12 @@ const TabbedNav = ({
   avatarUrl,
   username,
 }) => {
-  const navRef = useRef();
-  const hiddenRef = useRef();
+  const [scrolled, setScrolled] = useState(false)
   const handleScroll = () => {
     if (window.pageYOffset >= 400) {
-      navRef && navRef.current.classList.add('stuck');
-      hiddenRef && hiddenRef.current.classList.add('stuck');
+      setScrolled(true)
     } else {
-      navRef.current.classList.remove('stuck');
-      hiddenRef.current.classList.remove('stuck');
+      setScrolled(false)
     }
   };
 
@@ -28,9 +25,9 @@ const TabbedNav = ({
   }, []);
 
   return (
-    <div className="tabbed-nav" ref={navRef}>
+    <div className={`tabbed-nav ${scrolled && "stuck"}`}>
       <nav className="underlined-nav-body">
-        <div className="tabbed-profile-image" ref={hiddenRef}>
+        <div className={`tabbed-profile-image ${scrolled && "stuck"}`}>
           <img
             className="avatar-user-fixed"
             height="32"
