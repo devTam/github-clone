@@ -78,7 +78,7 @@ const fetchDataAsync = () => {
       .toFixed(3)
       .slice(2, 5)}Z`;
     const raw = JSON.stringify({
-      query: `query { viewer { avatarUrl name email login bio followers {totalCount} following {totalCount} starredRepositories {totalCount } contributionsCollection(from: "${lastYearDate}", to: "${todayDate}"){contributionCalendar{totalContributions}} pinnedItems(first: 5, types:REPOSITORY) { nodes { ... on Repository { id name description primaryLanguage { name } } } } repositories(last: 20, affiliations: [OWNER]) { totalCount nodes {name,stargazerCount,description,updatedAt, forkCount, primaryLanguage { name } }}}}`,
+      query: `query { viewer { avatarUrl name email login bio followers {totalCount} following {totalCount} starredRepositories {totalCount } contributionsCollection(from: "${lastYearDate}", to: "${todayDate}"){contributionCalendar{totalContributions}} pinnedItems(first: 6, types:REPOSITORY) { nodes { ... on Repository { id name description primaryLanguage { name } } } } repositories(last: 20, affiliations: [OWNER]) { totalCount nodes {name,stargazerCount,description,updatedAt, forkCount, primaryLanguage { name } }}}}`,
     });
     
     dispatch(fetchStart())

@@ -25,7 +25,7 @@ const Overview = ({ contributions, pinnedItems, username, darkMode }) => {
         </ol>
       </div>
 
-      <div className={`contributions ${darkMode && "hide-contribution"}`}>
+      <div className={`contributions ${darkMode && 'hide-contribution'}`}>
         <h2 className="contributions-text">
           <span>{contributions} contributions in the last year</span>
           <span className="contributions-btn">
@@ -53,7 +53,7 @@ const mapStateToProps = ({ data, darkMode }) => ({
     data.contributionsCollection.contributionCalendar.totalContributions,
   pinnedItems: data && data.pinnedItems.nodes,
   username: data && data.login,
-  darkMode
+  darkMode,
 });
 
 export default connect(mapStateToProps)(Overview);
