@@ -2,8 +2,7 @@
     padding: 16px;
     font-size: 14px;
     line-height: 1.5;
-    color: #24292e;
-    background-color: #24292e;
+    background-color: var(--header-bg);
   }
   
   .header-desktop,
@@ -63,8 +62,8 @@
   .header-form {
     display: flex;
     color: white;
-    background-color: #24292e;
-    border: 1px solid #444d56;
+    background-color: var(--header-form-bg);
+    border: 1px solid var(--header-form-border);
     font-weight: 400;
     padding: 0px 12px;
     border-radius: 6px;
@@ -77,6 +76,8 @@
     width: 100%;
     color: inherit;
     background: none;
+    background-color: inherit;
+    width: 100%;
     border: 0;
     padding: 0;
     line-height: 20px;
@@ -85,8 +86,8 @@
   }
   
   .header-form > input::placeholder {
-    /* color: #24292e; */
     font-size: 14px;
+    color: #c9d1d9;
   }
   
   .header-search-key-slash {

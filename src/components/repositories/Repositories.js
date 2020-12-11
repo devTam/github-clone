@@ -15,14 +15,14 @@ const Repositories = ({ repos }) => {
 
             <div className="search-params">
               <div className="details">
-                <summary className="btn">
+                <summary className="sidebar-btn">
                   <i className="select">Type:</i>
                   <span className="menu-button">All</span>
                   <i className="fas fa-caret-down"></i>
                 </summary>
               </div>
               <div className="details flex-auto">
-                <summary className="btn">
+                <summary className="sidebar-btn">
                   <i className="select">Language:</i>
                   <span className="menu-button">All</span>
                   <i className="fas fa-caret-down"></i>

@@ -4,15 +4,14 @@
   width: 100%;
   font-size: 12px;
   padding-top: 40px;
-  padding-bottom: 8px;
+  padding-bottom: 48px;
   margin-top: 40px;
-  margin-bottom: 40px;
-  color: #586069;
+  color: var(--overview-text-secondary);
 }
 
 .footer-link svg {
   vertical-align: text-bottom;
-  fill: #d1d5da;
+  fill: var(--footer-svg);
   display: inline-block;
 }
 
@@ -29,12 +28,12 @@
 
 .footer-list-item {
   margin-right: 16px;
-  color: #586069;
+  color: var(--overview-text-secondary);
   font-size: 12px;
 }
 
 .footer-list-item div {
-  color: #0366d6;
+  color: var(--overview-hover-text);
   text-decoration: none;
   cursor: pointer;
 }

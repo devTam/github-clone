@@ -8,7 +8,7 @@ function App({ currentUser }) {
  
 
   return (
-    <div className="App">
+    <div className="app">
       <Switch>
         <Route path="/profile" component={Profile} />
         <Route path='/' render={() => currentUser ? (<Redirect to='/profile' />) : (<Login />)} />

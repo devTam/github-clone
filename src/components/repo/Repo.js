@@ -90,7 +90,7 @@ const Repo = (props) => {
       <div className="list-item-right">
         <div>
           {!starred ? (
-            <button className="star-btn btn" onClick={handleClick}>
+            <button className="star-btn sidebar-btn" onClick={handleClick}>
               <svg
                 viewBox="0 0 16 16"
                 version="1.1"
@@ -106,7 +106,7 @@ const Repo = (props) => {
               Star
             </button>
           ) : (
-            <button className="star-btn btn" onClick={handleClick}>
+            <button className="star-btn sidebar-btn" onClick={handleClick}>
               <svg
                 className="octicon octicon-star-fill mr-1"
                 viewBox="0 0 16 16"

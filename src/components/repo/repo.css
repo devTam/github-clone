@@ -6,7 +6,7 @@
   .repo-list-item {
     width: 100%;
     padding: 24px 0;
-    border-bottom: 1px solid #e1e4e8;
+    border-bottom: 1px solid var(--border);
     display: flex;
   }
   
@@ -27,7 +27,7 @@
   }
   
   .repoo-name div {
-    color: #0366d6;
+    color: var(--overview-hover-text);
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
@@ -35,19 +35,19 @@
   
   .repoo-name div:hover {
     text-decoration: underline;
-    color: #0366d6;
+    color: var(--overview-hover-text);
   }
   
   .repo-description p {
     display: inline-block;
     padding-right: 24px;
     margin-bottom: 8px;
-    color: #586069;
+    color: var(--overview-text-secondary);
     width: 70%;
   }
   
   .repo-details {
-    color: #586069;
+    color: var(--overview-text-secondary);
     font-size: 12px;
     margin-top: 8px;
   }
@@ -72,7 +72,7 @@
 
   .forks {
     margin-right: 16px;
-    color: #586069;
+    color: var(--overview-text-secondary);
     text-decoration: none;
   }
   

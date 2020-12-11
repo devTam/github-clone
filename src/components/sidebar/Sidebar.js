@@ -100,7 +100,7 @@ const Sidebar = (props) => {
       }
 
       <div className="profile-edit">
-        <button className="btn">Edit profile</button>
+        <button className="sidebar-btn">Edit profile</button>
       </div>
 
       <div className="email-following-container">

@@ -2,13 +2,13 @@
   position: sticky;
   top: 0;
   margin-top: 24px;
-  background-color: #fff;
+  background-color: var(--tabbed-bg);
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 0 8px;
   overflow-x: auto;
-  border-bottom: 1px solid #e1e4e8;
+  border-bottom: 1px solid var(--tabbed-border);
   z-index: 2;
   
 }
@@ -43,7 +43,7 @@
   vertical-align: middle;
   transition: 0.2s ease;
   margin-left: 8px;
-  color: #24292e;
+  color: var(--tabbed-avatar-text);
 }
 
 .avatar-username strong {
@@ -53,7 +53,7 @@
 .underlined-nav {
   padding: 8px 16px;
   font-size: 14px;
-  color: #24292e;
+  color: var(--tabbed-link);
   line-height: 30px;
   text-align: center;
   white-space: nowrap;
@@ -68,7 +68,7 @@
 .underlined-nav.selected,
 .underlined-nav.selected:hover {
   font-weight: 600;
-  color: #24292e;
+  color: var(--tabbed-selected-link);
   border-bottom-color: #f9826c;
   outline: 1px dotted transparent;
   outline-offset: -1px;
@@ -80,15 +80,15 @@
 
 .underlined-nav:focus,
 .underlined-nav:hover {
-  color: #24292e;
+  color: var(--tabbed-hover-text);
   text-decoration: none;
-  border-bottom-color: #d1d5da;
+  border-bottom-color: var(--tabbed-hover-border);
   outline: 1px dotted transparent;
 }
 
 .underlined-nav .counter {
   margin-left: 4px;
-  color: #24292e;
+  color: var(--tabbed-counter-text);
   display: inline-block;
   min-width: 20px;
   padding: 0 6px;
@@ -98,7 +98,7 @@
   text-align: center;
   border: 1px solid transparent;
   border-radius: 2em;
-  background-color: rgba(209, 213, 218, 0.5);
+  background-color:var(--tabbed-counter-bg);
 }
 
 .underlined-nav > svg {
