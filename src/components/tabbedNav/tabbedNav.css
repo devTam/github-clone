@@ -3,7 +3,7 @@
   top: 0;
   margin-top: 24px;
   background-color: var(--tabbed-bg);
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   width: 100%;
   padding: 0 8px;
@@ -14,8 +14,9 @@
 }
 
 .underlined-nav-body {
-  display: flex;
-  width: 100%;
+  display: inline-flex;
+  /* width: 100%; */
+  width: 85%; 
 }
 
 .tabbed-profile-image {
@@ -23,7 +24,7 @@
   font-size: 14px;
   display: flex;
   align-items: center;
-  width: 29%;
+  width: 34%;
   transition: .4s ease;
   opacity: 0;
 }

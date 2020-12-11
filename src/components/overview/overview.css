@@ -73,6 +73,10 @@
     height: auto;
 }
 
+.hide-contribution {
+    display: none;
+}
+
  @media only screen and (min-width: 788px) {
     .overview-container {
         padding-right: 16px;

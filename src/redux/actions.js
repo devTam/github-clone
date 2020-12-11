@@ -1,4 +1,5 @@
 import {
+  CHANGE_THEME,
   COLOR,
   FETCH_DATA_FAILURE,
   FETCH_DATA_START,
@@ -33,6 +34,10 @@ export const setColor = (color) => ({
 export const setSelectedTab = (tab) => ({
   type: SELECTED_TAB,
   payload: tab,
+});
+
+export const changeTheme = () => ({
+  type: CHANGE_THEME
 });
 
 export const fetchStart = () => ({

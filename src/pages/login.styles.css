@@ -10,7 +10,7 @@
 
 .login__logo {
     display: inline-block;
-    fill: #586069;
+    fill: var(--overview-text-secondary);
 }
 
 .login__header {
@@ -19,14 +19,16 @@
     font-weight: 300;
     letter-spacing: -.5px;
     margin: .67em 0;
+    color: var(--overview-text-primary);
 }
 
 .login__btn {
     display: block;
     text-align: center;
-    background-color: #2ea44f;
-    border-color: rgba(27, 31, 35, 0.15);
-    box-shadow: 0 1px 0 rgba(27, 31, 35, 0.1), inset 0 1px 0 hsla(0, 0, 100%, 0.03);
+    background-color: var(--repo-new-btn-bg);
+    /* border-color: rgba(27, 31, 35, 0.15); */
+    border-color: var(--border);
+    box-shadow: var(--sidebar-btn-shadow1), var(--sidebar-btn-shadow2);
     padding: 5px 16px;
     width: 250px;
     max-width: 100%;
@@ -43,7 +45,7 @@
 }
 
 .login__btn:hover {
-    background-color: #2c974b;
+    background-color: var(--repo-new-btn-hover-bg);
 }
 
 .login__btn:active {

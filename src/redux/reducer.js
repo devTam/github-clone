@@ -6,7 +6,7 @@ const persistConfig = {
   storage,
 }
 
-const { SIGN_IN, SIGN_OUT, SIGNED_IN, COLOR, SELECTED_TAB, FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } = require('./types');
+const { SIGN_IN, SIGN_OUT, SIGNED_IN, COLOR, SELECTED_TAB, FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, CHANGE_THEME } = require('./types');
 
 const INITIAL_STATE = {
   token: null,
@@ -15,7 +15,8 @@ const INITIAL_STATE = {
   selectedTab: 'overview',
   loading: false,
   data: null,
-  error: ''
+  error: '',
+  darkMode: false
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -50,6 +51,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         selectedTab: action.payload
+      };
+
+    case CHANGE_THEME:
+      return {
+        ...state,
+        darkMode: !state.darkMode
       };
 
     case FETCH_DATA_START:

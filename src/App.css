@@ -1,4 +1,9 @@
 :root {
+    --dark-toggle-border: #d1d5da;
+    --dark-toggle-bg: #fff;
+    --dark-toggle-thumb-bg: #2f363d;
+    --dark-svg-stroke: #d1d5da;
+    --color-dark-mode-toggle-moon: #ffdf5d;
   --header-bg: #24292e;
   --header-form-bg: #24292e;
   --bg: #fff;
@@ -42,6 +47,10 @@
 }
 
 :root[theme="dark"] {
+    --dark-toggle-thumb-bg: #6e40c9;
+    --color-dark-mode-toggle-moon: #f8e3a1;
+    --dark-toggle-border: #3c1e70;
+    --dark-toggle-bg: #271052;
     --header-form-border: #21262d;
     --repo-btn-new-svg: #f0f6fc;
     --repo-new-btn-bg: #238636;

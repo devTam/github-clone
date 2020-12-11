@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { setSelectedTab } from '../../redux/actions';
+import DarkSvg from '../dark-svg/DarkSvg';
 import './tabbedNav.css';
 
 const TabbedNav = ({
@@ -118,6 +119,7 @@ const TabbedNav = ({
           Packages
         </div>
       </nav>
+      <DarkSvg />
     </div>
   );
 };
